@@ -64,3 +64,31 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Скачать VSCode
+Скачать node
+Скачать xampp
+Cкачать composer
+Скачать git
+
+composer require -g laravel/laravel
+
+composer create laravel/laravel test-app
+
+composer require laravel/breeze
+
+php artisan breeze:install
+
+git init
+
+git add .
+
+git commit -m "initial"
+
+git remote add origin "https://link-to-repo.git"
+
+git remote add origin https://github.com/cameronmcnz/example-website.git
+
+git push -u -f origin master
+
+
