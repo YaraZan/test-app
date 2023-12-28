@@ -30,23 +30,15 @@ class DashboardController extends Controller
      */
     public function create(Request $request)
     {
-
+        $path = $request->file('image')->store('arts');
 
         $art  = new Art();
-        $art->name = $request->name;
+        $art->title = $request->title;
+        $art->user_id = $request->user()->id;
+        $art->url = $path;
+        $art->save();
 
-        if($request->hasFile('image')){
-            $image = $request->file('image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(300, 300)->save( storage_path('/uploads/' . $filename ) );
-            $art->image = $filename;
-            $art->save();
-        };
-
-        $person->save();
-
-        return redirect()->route('people.index')
-        ->with('success','Item created successfully');
+        return Redirect::to('/dashboard');
     }
 
 }

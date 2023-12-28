@@ -28,8 +28,9 @@ const props = defineProps({
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div v-if="arts.length > 0" class="w-full grid grid-cols-4">
-                    <div class="cursor-pointer bg-gray-100 rounded-lg" v-for="art in arts" :key="art.id">
-                        <img :src="art.url" :alt="art.title">
+                    <div class="cursor-pointer bg-gray-300 rounded-lg flex flex-col gap-4" v-for="art in arts" :key="art.id">
+                        <img class="w-full" :src="`/storage/${art.url}`" :alt="art.title">
+                        <span class="">{{ art.url }}</span>
                         <span class="">{{ art.title }}</span>
                     </div>
                 </div>
